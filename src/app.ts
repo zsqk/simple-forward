@@ -1,12 +1,20 @@
 import * as Koa from 'koa';
+import * as bodyParser from 'koa-bodyparser';
+
+import proxy from './includes/proxy';
+
 const app = new Koa();
 
 export const hi = async (ctx: Koa.Context) => {
-  ctx.body = 'Hello World';
+  if (!ctx.body) {
+    ctx.body = 'Hello World';
+  }
 };
 
+app.use(bodyParser());
+app.use(proxy);
 app.use(hi);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 export default app;
