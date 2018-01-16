@@ -1,11 +1,11 @@
 {
   "name": "gy-google",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A proxy for connect Google.",
   "author": "iugo",
   "license": "MIT",
   "scripts": {
-    "prestart": "tsc",
+    "prestart": "rm -r dist; ./node_modules/.bin/tsc -p ./tsconfig.json",
     "start": "node dist/app.js",
     "test": "jest"
   },
