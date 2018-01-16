@@ -1,0 +1,23 @@
+{
+  "name": "gy-google",
+  "version": "0.0.1",
+  "description": "A proxy for connect Google.",
+  "author": "iugo",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "rm -r dist; tsc",
+    "start": "node dist/app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "koa": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "@types/koa": "^2.0.43",
+    "jest": "^22.1.1",
+    "supertest": "^3.0.0",
+    "ts-jest": "^22.0.1",
+    "typescript": "^2.6.2"
+  }
+}
