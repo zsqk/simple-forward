@@ -17,4 +17,6 @@ app.use(hi);
 
 app.listen(process.env.PORT || 3000);
 
+console.log('系统开始运行', new Date());
+
 export default app;

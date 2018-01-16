@@ -1,6 +1,6 @@
 {
   "name": "gy-google",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A proxy for connect Google.",
   "author": "iugo",
   "license": "MIT",
