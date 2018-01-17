@@ -5,7 +5,7 @@
   "author": "iugo",
   "license": "MIT",
   "scripts": {
-    "postinstall": "rm -r dist; tsc -p ./tsconfig.json",
+    "postinstall": "rm -r dist; tsc",
     "start": "node dist/app.js",
     "test": "jest"
   },
