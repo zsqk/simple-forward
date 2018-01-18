@@ -4,15 +4,20 @@ import fetch from 'node-fetch';
 const proxy = async (ctx: Koa.Context) => {
   const time = Date.now();
   try {
-    const url = `https://${ctx.header.host + ctx.path}?${ctx.querystring}`;
-    console.log(time, '请求 url', url);
-    console.log(time, '请求 body', ctx.request.rawBody);
+    const {
+      host,
+      ...rest,
+    } = ctx.header;
+    let url = `https://${host + ctx.path}?${ctx.querystring}`;
+    if (ctx.querystring) {
+      url += `?${ctx.querystring}`;
+    }
+    console.log(time, '请求', url, ctx.request.rawBody);
     const body = await fetch(url, {
       body: ctx.request.rawBody,
-      headers: {
-        'Content-Type': ctx.header['content-type'],
-        'User-Agent': 'zsqk-node',
-      },
+      headers: Object.assign({}, rest, {
+        'user-agent': 'zsqk-node',
+      }),
       method: ctx.method,
     }).then(res => res.text());
     ctx.body = body;
