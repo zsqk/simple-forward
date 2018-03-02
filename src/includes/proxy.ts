@@ -5,14 +5,14 @@ const proxy = async (ctx: Koa.Context) => {
   const time = Date.now();
   try {
     const {
-      host,
+      thehost,
       ...rest,
     } = ctx.header;
-    if (!host) {
+    if (!thehost) {
       ctx.body = '"some"';
       return;
     }
-    let url = `https://${host + ctx.path}`;
+    let url = `https://${thehost + ctx.path}`;
     if (ctx.querystring) {
       url += `?${ctx.querystring}`;
     }
