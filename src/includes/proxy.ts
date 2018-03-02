@@ -5,6 +5,7 @@ const proxy = async (ctx: Koa.Context) => {
   const time = Date.now();
   try {
     const {
+      host,
       thehost,
       ...rest,
     } = ctx.header;
