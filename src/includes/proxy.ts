@@ -20,7 +20,9 @@ const proxy = async (ctx: Koa.Context) => {
     console.log(time, '请求', url, ctx.request.rawBody);
     const body = await fetch(url, {
       body: ctx.request.rawBody,
-      headers: Object.assign({}, rest, {
+      headers: Object.assign({
+        'access-control-allow-origin': '*',
+      }, rest, {
         'user-agent': 'zsqk-node',
       }),
       method: ctx.method,
