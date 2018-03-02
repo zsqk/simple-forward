@@ -15,8 +15,9 @@ app.use(bodyParser());
 app.use(proxy);
 app.use(hi);
 
-app.listen(process.env.PORT || 3000);
+const port = process.env.PORT || 80;
+app.listen(port);
 
-console.log(`系统开始运行在: ${process.env.PORT}`, new Date());
+console.log(`系统开始运行在: ${port}`, new Date());
 
 export default app;
