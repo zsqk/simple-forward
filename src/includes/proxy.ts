@@ -8,7 +8,7 @@ const proxy = async (ctx: Koa.Context) => {
       host,
       ...rest,
     } = ctx.header;
-    let url = `https://${host + ctx.path}?${ctx.querystring}`;
+    let url = `https://${host + ctx.path}`;
     if (ctx.querystring) {
       url += `?${ctx.querystring}`;
     }
