@@ -25,7 +25,6 @@ const proxy = async (ctx: Koa.Context) => {
       }),
       method: ctx.method,
     }).then(res => res.text());
-    ctx.set('Access-Control-Allow-Origin', '*');
     ctx.body = body;
   } catch (err) {
     console.error(time, err);
