@@ -11,6 +11,11 @@ export const hi = async (ctx: Koa.Context) => {
   }
 };
 
+app.use(async (ctx: Koa.Context, next: any) => {
+  await next();
+  ctx.set('Access-Control-Allow-Origin', '*');
+});
+
 app.use(bodyParser());
 app.use(proxy);
 app.use(hi);
