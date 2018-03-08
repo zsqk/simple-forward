@@ -14,7 +14,7 @@ export const hi = async (ctx: Koa.Context) => {
 app.use(async (ctx: Koa.Context, next: any) => {
   await next();
   ctx.set('Access-Control-Allow-Origin', '*');
-  ctx.set('Access-Control-Allow-Headers', '*');
+  ctx.set('Access-Control-Allow-Headers', '*, thehost');
 });
 
 app.use(bodyParser());
