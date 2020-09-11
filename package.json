@@ -22,7 +22,7 @@
     "jest": "^22.1.1",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^2.6.1",
     "supertest": "^3.0.0",
     "ts-jest": "^22.0.1",
     "typescript": "^2.6.2"
